@@ -1,11 +1,10 @@
 import 'dart:io';
-import 'dart:math';
 import 'planet.dart';
 import 'planetary_system.dart';
 
 class SpaceAdventure {
 
-  PlanetarySystem planetarySystem;
+  final PlanetarySystem planetarySystem;
 
   SpaceAdventure({this.planetarySystem});
 
@@ -13,16 +12,20 @@ class SpaceAdventure {
     printGreeting();
     printIntroduction(responseToPrompt('What is your name?'));
     print('Let\'s go on an adventure!');
-    travel(
-      promptForRandomOrSpecificDestination(
-        'Shall I randomly choose a planet for you to visit? (Y or N)'
-      )
-    );
+    if (planetarySystem.hasPlanets) {
+      travel(
+        promptForRandomOrSpecificDestination(
+          'Shall I randomly choose a planet for you to visit? (Y or N)'
+        )
+      );
+    } else {
+      print('Aw, there are no planets to explore.');
+    }
   }
 
   void printGreeting() {
     print('Welcome to the ${planetarySystem.name}!');
-    print('There are ${planetarySystem.planets.length} planets to explore.');
+    print('There are ${planetarySystem.numberOfPlanets} planets to explore.');
   }
 
   String responseToPrompt(String prompt) {
@@ -50,33 +53,24 @@ class SpaceAdventure {
   }
 
   void travel(bool randomDestination) {
+    Planet planet;
     if (randomDestination) {
-      travelToRandomDestination();
+      planet = planetarySystem.getRandomPlanet();
     } else {
-      travelTo(getPlanetFromUser());
+      planet = getPlanetFromUser();
     }
+    travelTo(planet);
   }
 
   Planet getPlanetFromUser() {
     String input = responseToPrompt('Name the planet you would like to visit.');
     while (true) {
-      if(planetarySystem.isRealPlanet(input)) {
-        return planetarySystem.planets[planetarySystem.getPlanetIndexByName(input)];
+      Planet realPlanet = planetarySystem.getPlanetWithName(input);
+      if(realPlanet != null) {
+        return realPlanet;
       }
       input = responseToPrompt('Sorry friend! I didn\'t catch that. Pick one of the following planets: ${planetarySystem.getPlanetsString()}.');
     }
-  }
-
-  int getRandomNumber(int upTo) {
-    return Random().nextInt(upTo);
-  }
-
-  void travelToRandomDestination() {
-    Planet randomPlanet = planetarySystem.planets[getRandomNumber(planetarySystem.planets.length)];
-    print(
-      'Ok! Traveling to ${randomPlanet.name}...\n'
-      'Arrived at ${randomPlanet.name}. ${randomPlanet.description}'
-    );
   }
 
   void travelTo(Planet destination) {

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
-import 'planetary_system.dart';
 import 'planet.dart';
+import 'planetary_system.dart';
 
 class ReadFile {
   String filename;
@@ -18,9 +18,9 @@ class ReadFile {
 
   List<Planet> getPlanets(List planetsData) {
     List<Planet> planets = new List();
-    for (final planetData in planetsData) {
-      planets.add(Planet(name: planetData['name'], description: planetData['description']));
-    }
+    planetsData.forEach((planet) {
+      planets.add(Planet(name: planet['name'], description: planet['description']));
+    });
     return planets;
   }
 

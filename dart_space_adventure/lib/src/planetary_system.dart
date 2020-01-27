@@ -1,29 +1,29 @@
+import 'dart:math';
 import 'planet.dart';
 
 class PlanetarySystem {
-  String name;
-  List<Planet> planets;
+  final Random _random = Random();
+  final String name;
+  final List<Planet> planets;
 
   PlanetarySystem({this.name = 'Unnamed System', this.planets = const []});
 
-  bool isRealPlanet(String input) {
-    for (final planet in planets) {
-      if (planet.name == input) {
-        return true;
-      }
+  int get numberOfPlanets => planets.length;
+  bool get hasPlanets => planets.isNotEmpty;
+
+  Planet getRandomPlanet() {
+    if (!hasPlanets) {
+      return Planet.nullPlanet();
     }
-    return false;
+    return planets[_random.nextInt(planets.length)];
   }
 
-  int getPlanetIndexByName(String input) {
-    int index = 0;
-    for (final planet in planets) {
-      if (planet.name == input) {
-        return index;
-      }
-      index++;
-    }
-    return -1;
+  Planet getPlanetWithName(String input) {
+    print(input);
+    return planets.firstWhere(
+      (planet) => planet.name == input,
+      orElse: () => null
+    );
   }
 
   String getPlanetsString() {
