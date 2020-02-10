@@ -35,7 +35,7 @@ class BusinessCard extends StatelessWidget {
               ContactInfo(
                 phoneNumber: '818-687-2962',
                 github: 'github.com/davidmednikov',
-                email: 'davemednikov@gmail.com'
+                email: 'mednikod@oregonstate.edu'
               ),
             ],
           ),

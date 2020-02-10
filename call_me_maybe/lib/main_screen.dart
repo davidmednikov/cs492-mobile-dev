@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tab_nav_controller.dart';
+import 'components/tab_nav_controller.dart';
 
 class MainScreen extends StatelessWidget {
 

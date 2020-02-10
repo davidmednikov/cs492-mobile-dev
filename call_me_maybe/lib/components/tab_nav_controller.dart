@@ -8,7 +8,7 @@ class TabNavController extends StatelessWidget {
   static const tabs = [
     Tab(icon: Icon(Icons.account_circle)),
     Tab(icon: Icon(Icons.chrome_reader_mode)),
-    Tab(icon: Icon(Icons.polymer)),
+    Tab(icon: Icon(Icons.settings_phone)),
   ];
 
   TabNavController({Key key, this.title}) : super(key: key);

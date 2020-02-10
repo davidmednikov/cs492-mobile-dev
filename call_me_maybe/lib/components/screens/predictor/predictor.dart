@@ -15,7 +15,6 @@ class _PredictorState extends State<Predictor> {
   final predictorModel = PredictorModel();
 
   Widget build(BuildContext context) {
-
     return Container(
       child: Column(
         children: [
