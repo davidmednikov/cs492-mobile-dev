@@ -6,7 +6,7 @@ class WebContactInfo extends StatelessWidget {
 
   final String github;
   final String email;
-  
+
   const WebContactInfo({Key key, this.github, this.email }) : super(key: key);
 
   @override

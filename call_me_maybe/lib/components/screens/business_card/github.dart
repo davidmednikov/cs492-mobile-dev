@@ -4,9 +4,9 @@ import 'package:url_launcher/url_launcher.dart';
 class Github extends StatelessWidget {
 
   final String github;
-  
+
   const Github({Key key, this.github }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

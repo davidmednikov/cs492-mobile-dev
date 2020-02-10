@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Name extends StatelessWidget {
 
   final String name;
-  
+
   const Name({Key key, this.name }) : super(key: key);
 
   @override

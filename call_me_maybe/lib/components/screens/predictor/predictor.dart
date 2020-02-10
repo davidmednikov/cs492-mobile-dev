@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'instructions.dart';
+import 'prediction.dart';
+import 'prompt.dart';
 import '../../models/predictor_model.dart';
 
 class Predictor extends StatefulWidget {
@@ -9,10 +12,9 @@ class Predictor extends StatefulWidget {
 
 class _PredictorState extends State<Predictor> {
 
-  @override
-  Widget build(BuildContext context) {
+  final predictorModel = PredictorModel();
 
-    final predictorModel = PredictorModel();
+  Widget build(BuildContext context) {
 
     return Container(
       child: Column(
@@ -20,10 +22,23 @@ class _PredictorState extends State<Predictor> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${predictorModel.prediction}'),
+              Prompt(prompt: 'Call Me...Maybe?'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
               GestureDetector(
                 onTap: () { setState( () {predictorModel.randomPrediction(); }); },
-                child: Text('text'),
+                child: Instructions(instructions: 'Ask a question...tap for the answer.'),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Prediction(prediction: '${predictorModel.prediction}'),
               ),
             ],
           ),

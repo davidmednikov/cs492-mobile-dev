@@ -4,9 +4,9 @@ import 'package:url_launcher/url_launcher.dart';
 class Email extends StatelessWidget {
 
   final String email;
-  
+
   const Email({Key key, this.email }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -4,7 +4,7 @@ import 'tab_nav_controller.dart';
 class MainScreen extends StatelessWidget {
 
   final String title;
-  
+
   MainScreen({Key key, this.title}) : super(key: key);
 
   @override
