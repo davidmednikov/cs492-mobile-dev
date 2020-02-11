@@ -24,7 +24,7 @@ class ResumeEntryTitle extends StatelessWidget {
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.025;
+      return MediaQuery.of(context).size.height * 0.001;
     }
     return MediaQuery.of(context).size.height * 0.04;
   }

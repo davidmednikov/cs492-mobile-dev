@@ -21,13 +21,21 @@ class ResumeEntryCaption extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 14),
               ),
+            ],
+          ),
+          Column(
+            children: [
               Text(
                 dates,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 14),
               ),
+            ],
+          ),
+          Column(
+            children: [
               Text(
-                company,
+                location,
                 textAlign: TextAlign.right,
                 style: TextStyle(fontSize: 14),
               ),

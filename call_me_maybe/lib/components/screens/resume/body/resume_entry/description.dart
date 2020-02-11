@@ -15,7 +15,7 @@ class ResumeEntryDescription extends StatelessWidget {
           Text(
             description,
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 13),
           ),
         ],
       )
@@ -24,7 +24,7 @@ class ResumeEntryDescription extends StatelessWidget {
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.025;
+      return MediaQuery.of(context).size.height * 0.01;
     }
     return MediaQuery.of(context).size.height * 0.04;
   }

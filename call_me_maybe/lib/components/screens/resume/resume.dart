@@ -47,26 +47,71 @@ class Resume extends StatelessWidget {
         "location": "Los Angeles, CA",
         "description": "Code this shit all day every day."
     },
+    {
+        "title": "Full Stack Software Engineer",
+        "company": "GlobalWide Media",
+        "dates": "04/2018 - Current",
+        "location": "Los Angeles, CA",
+        "description": "Code this shit all day every day."
+    },
+    {
+        "title": "Full Stack Software Engineer",
+        "company": "GlobalWide Media",
+        "dates": "04/2018 - Current",
+        "location": "Los Angeles, CA",
+        "description": "Code this shit all day every day."
+    },
+    {
+        "title": "Full Stack Software Engineer",
+        "company": "GlobalWide Media",
+        "dates": "04/2018 - Current",
+        "location": "Los Angeles, CA",
+        "description": "Code this shit all day every day."
+    },
+    {
+        "title": "Full Stack Software Engineer",
+        "company": "GlobalWide Media",
+        "dates": "04/2018 - Current",
+        "location": "Los Angeles, CA",
+        "description": "Code this shit all day every day."
+    },
+    {
+        "title": "Full Stack Software Engineer",
+        "company": "GlobalWide Media",
+        "dates": "04/2018 - Current",
+        "location": "Los Angeles, CA",
+        "description": "Code this shit all day every day."
+    },
+    {
+        "title": "Full Stack Software Engineer",
+        "company": "GlobalWide Media",
+        "dates": "04/2018 - Current",
+        "location": "Los Angeles, CA",
+        "description": "Code this shit all day every day."
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             children: [
-              Expanded(
+              Flexible(
                 child: Header(name: 'David Mednikov', email: 'mednikod@oregonstate.edu', github: 'github.com/davidmednikov'),
               ),
             ],
           ),
-          Row(
-            children: [
-              Expanded(
-                child: ResumeBody(experience: this.experience),
-              ),
-            ],
+          Flexible(
+            child: Row(
+              children: [
+                Flexible(
+                  child: ResumeBody(experience: this.experience),
+                ),
+              ],
+            ),
           ),
         ],
       ),
