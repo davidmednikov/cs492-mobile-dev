@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Name extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class Name extends StatelessWidget {
     return Container(
       child: Text(
         name,
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 24, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
       ),
     );
   }

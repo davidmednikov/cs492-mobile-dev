@@ -15,7 +15,7 @@ class Email extends StatelessWidget {
         onTap: openEmail,
         child: Text(
           email,
-          style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 16, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
         ),
       ),
     );

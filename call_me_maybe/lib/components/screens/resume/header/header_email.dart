@@ -15,7 +15,7 @@ class HeaderEmail extends StatelessWidget {
           Text(
             email,
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 14),
+            style: TextStyle(fontSize: 16, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
           ),
         ],
       ),    );
@@ -23,7 +23,7 @@ class HeaderEmail extends StatelessWidget {
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.003;
+      return MediaQuery.of(context).size.height * 0.001;
     }
     return MediaQuery.of(context).size.height * 0.005;
   }

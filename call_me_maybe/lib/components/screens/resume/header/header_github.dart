@@ -14,7 +14,7 @@ class HeaderGithub extends StatelessWidget {
           Text(
             'https://$github',
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 14),
+            style: TextStyle(fontSize: 16, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
           ),
         ],
       ),

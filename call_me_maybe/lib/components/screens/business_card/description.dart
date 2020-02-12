@@ -12,7 +12,7 @@ class Description extends StatelessWidget {
       padding: EdgeInsets.only(top: topPadding(context), bottom: bottomPadding(context) ),
       child: Text(
         description,
-        style: TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: 20, fontFamily: 'Garamond', color: Color(0xff5d5c5e)),
       ),
     );
   }

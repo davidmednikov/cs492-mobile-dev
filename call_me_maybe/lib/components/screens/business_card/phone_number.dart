@@ -15,7 +15,7 @@ class PhoneNumber extends StatelessWidget {
         onTap: openMessaging,
         child: Text(
           phoneNumber,
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 18, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
         ),
       ),
     );

@@ -15,26 +15,22 @@ class ResumeEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        ResumeEntryTitle(title: title),
-        ResumeEntryCaption(company: company, dates: dates, location: location),
-        ResumeEntryDescription(description: description),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: verticalPadding(context)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          ResumeEntryTitle(title: title),
+          ResumeEntryCaption(company: company, dates: dates, location: location),
+          ResumeEntryDescription(description: description),
+        ],
+      ),
     );
   }
 
-  double topPadding(BuildContext context) {
+  double verticalPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.005;
-    }
-    return MediaQuery.of(context).size.height * 0.04;
-  }
-
-  double bottomPadding(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.005;
+      return MediaQuery.of(context).size.height * 0.0075;
     }
     return MediaQuery.of(context).size.height * 0.04;
   }

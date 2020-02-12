@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'company.dart';
+import 'dates.dart';
+import 'location.dart';
 
 class ResumeEntryCaption extends StatelessWidget {
 
@@ -14,32 +17,26 @@ class ResumeEntryCaption extends StatelessWidget {
       padding: EdgeInsets.only(bottom: bottomPadding(context)),
       child: Row(
         children: [
-          Column(
-            children: [
-              Text(
-                company,
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
+          Expanded(
+            child: Column(
+              children: [
+                ResumeEntryCompany(company: company),
+              ],
+            ),
           ),
-          Column(
-            children: [
-              Text(
-                dates,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
+          Expanded(
+            child: Column(
+              children: [
+                ResumeEntryDates(dates: dates),
+              ],
+            ),
           ),
-          Column(
-            children: [
-              Text(
-                location,
-                textAlign: TextAlign.right,
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
+          Expanded(
+            child: Column(
+              children: [
+                ResumeEntryLocation(location: location),
+              ],
+            ),
           ),
         ],
       )
@@ -48,7 +45,7 @@ class ResumeEntryCaption extends StatelessWidget {
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.001;
+      return MediaQuery.of(context).size.height * 0.002;
     }
     return MediaQuery.of(context).size.height * 0.01;
   }

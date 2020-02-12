@@ -15,7 +15,7 @@ class ResumeEntryTitle extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 17, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
           ),
         ],
       )
@@ -24,7 +24,7 @@ class ResumeEntryTitle extends StatelessWidget {
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.001;
+      return MediaQuery.of(context).size.height * 0.002;
     }
     return MediaQuery.of(context).size.height * 0.04;
   }

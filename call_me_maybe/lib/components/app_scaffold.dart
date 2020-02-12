@@ -20,11 +20,13 @@ class AppScaffold extends StatelessWidget {
         title: Center(
           child: Text(title),
         ),
+        backgroundColor: Color(0xff54b0f3),
         bottom: TabBar(tabs: tabs),
       ),
       body: TabBarView(
         children: screens,
       ),
+      backgroundColor: Color(0xffeef3f9),
     );
   }
 }

@@ -33,7 +33,7 @@ class BusinessCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ContactInfo(
-                phoneNumber: '818-687-2962',
+                phoneNumber: '818 687 2962',
                 github: 'github.com/davidmednikov',
                 email: 'mednikod@oregonstate.edu'
               ),

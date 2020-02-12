@@ -12,10 +12,12 @@ class ResumeEntryDescription extends StatelessWidget {
       padding: EdgeInsets.only(bottom: bottomPadding(context)),
       child: Row(
         children: [
-          Text(
-            description,
-            textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 13),
+          Flexible(
+            child: Text(
+              description,
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 15, fontFamily: 'Garamond', color: Color(0xff5d5c5e)),
+            ),
           ),
         ],
       )
@@ -24,7 +26,7 @@ class ResumeEntryDescription extends StatelessWidget {
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.01;
+      return MediaQuery.of(context).size.height * 0.002;
     }
     return MediaQuery.of(context).size.height * 0.04;
   }

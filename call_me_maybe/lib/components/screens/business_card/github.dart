@@ -15,7 +15,7 @@ class Github extends StatelessWidget {
         onTap: openUrl,
         child: Text(
           github,
-          style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 16, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
         ),
       )
     );
