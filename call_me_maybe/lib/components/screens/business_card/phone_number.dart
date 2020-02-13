@@ -25,7 +25,7 @@ class PhoneNumber extends StatelessWidget {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
       return MediaQuery.of(context).size.height * 0.03;
     }
-    return MediaQuery.of(context).size.height * 0.05;
+    return MediaQuery.of(context).size.height * 0.03;
   }
 
   void openMessaging() async {

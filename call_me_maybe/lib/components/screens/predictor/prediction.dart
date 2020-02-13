@@ -22,7 +22,7 @@ class Prediction extends StatelessWidget {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
       return MediaQuery.of(context).size.height * 0.06;
     }
-    return MediaQuery.of(context).size.height * 0.1;
+    return MediaQuery.of(context).size.height * 0.075;
   }
 
   double sidePadding(BuildContext context) {

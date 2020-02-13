@@ -32,6 +32,6 @@ class ResumeEntry extends StatelessWidget {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
       return MediaQuery.of(context).size.height * 0.0075;
     }
-    return MediaQuery.of(context).size.height * 0.04;
+    return MediaQuery.of(context).size.height * 0.01;
   }
 }

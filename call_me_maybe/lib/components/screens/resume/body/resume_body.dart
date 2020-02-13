@@ -25,7 +25,7 @@ class ResumeBody extends StatelessWidget {
   }
 
   double verticalPadding(BuildContext context) {
-    return MediaQuery.of(context).size.height * 0.01;
+    return MediaQuery.of(context).size.height * 0.005;
   }
 
   double horizontalPadding(BuildContext context) {

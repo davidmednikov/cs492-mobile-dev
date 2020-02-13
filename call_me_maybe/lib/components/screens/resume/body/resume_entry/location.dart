@@ -13,7 +13,7 @@ class ResumeEntryLocation extends StatelessWidget {
       child: Text(
         location,
         textAlign: TextAlign.right,
-        style: TextStyle(fontSize: 16, fontFamily: 'Garamond', color: Color(0xff5d5c5e)),
+        style: TextStyle(fontSize: 14, fontFamily: 'Garamond', color: Color(0xff5d5c5e)),
       ),
     );
   }

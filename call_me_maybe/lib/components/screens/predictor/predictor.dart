@@ -29,7 +29,7 @@ class _PredictorState extends State<Predictor> {
             children: [
               GestureDetector(
                 onTap: () { setState( () {predictorModel.randomPrediction(); }); },
-                child: Instructions(instructions: 'Ask a question...tap for the answer.'),
+                child: Instructions(instructions: 'Ask a question...\nTap for the answer.'),
               ),
             ],
           ),

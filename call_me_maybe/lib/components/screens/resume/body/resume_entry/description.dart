@@ -16,7 +16,7 @@ class ResumeEntryDescription extends StatelessWidget {
             child: Text(
               description,
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 15, fontFamily: 'Garamond', color: Color(0xff5d5c5e)),
+              style: TextStyle(fontSize: 14, fontFamily: 'Garamond', color: Color(0xff5d5c5e)),
             ),
           ),
         ],

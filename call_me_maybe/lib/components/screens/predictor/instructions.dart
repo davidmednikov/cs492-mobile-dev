@@ -12,6 +12,7 @@ class Instructions extends StatelessWidget {
       child: Text(
         instructions,
         style: TextStyle(fontSize: 20, fontFamily: 'Eminenz', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
+        textAlign: TextAlign.center,
       ),
     );
   }

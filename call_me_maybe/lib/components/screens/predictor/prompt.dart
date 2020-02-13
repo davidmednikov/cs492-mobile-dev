@@ -19,15 +19,15 @@ class Prompt extends StatelessWidget {
 
   double topPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
-      return MediaQuery.of(context).size.height * 0.25;
+      return MediaQuery.of(context).size.height * 0.2;
     }
-    return MediaQuery.of(context).size.height * 0.1;
+    return MediaQuery.of(context).size.height * 0.05;
   }
 
   double bottomPadding(BuildContext context) {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
       return MediaQuery.of(context).size.height * 0.05;
     }
-    return MediaQuery.of(context).size.height * 0.075;
+    return MediaQuery.of(context).size.height * 0.03;
   }
 }

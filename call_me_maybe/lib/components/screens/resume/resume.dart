@@ -22,7 +22,7 @@ class Resume extends StatelessWidget {
         "dates": "04/2018 - 02/2020",
         "location": "Los Angeles, CA",
         "description": "Develop internal web applications in:\n"
-        "• Java Spring backend, Python Django middle layer, VueJS frontend\n"
+        "• Java Spring backend, Python Django middle, VueJS frontend\n"
         "• Design and write unit tests for Java backend\n"
         "• Implement consistent logging on all platforms\n"
         "• Author documentation for Python middle layer"
@@ -32,10 +32,10 @@ class Resume extends StatelessWidget {
         "company": "MeridianLink",
         "dates": "07/2017 - 04/2018",
         "location": "Costa Mesa, CA",
-        "description": "Direct and torubleshoot software integrations with partner vendors\n"
+        "description": "Manage software integrations with partner vendors\n"
         "• Work with APIs and documentation for new integrations\n"
         "• Parse JSON and XML documents for potential errors\n"
-        "• Identify bugs, review code, engineer fixes & workaround solutions\n"
+        "• Identify bugs, review code, engineer workaround solutions\n"
         "• Meet with clients, enable integrations, handle support tickets"
     },
     {
@@ -44,10 +44,9 @@ class Resume extends StatelessWidget {
         "dates": "06/2016 - 07/2017",
         "location": "Costa Mesa, CA",
         "description": "Main point of contact for client support and other inquiries\n"
-        "• Answer emails, chats, and phone calls regarding our mortgage LOS\n"
-        "• Improve customer efficiency and engineer workaround solutions\n"
-        "• Implement 2FA on company-wide with weekly meetings\n"
-        "• Improve customer efficiency and engineer workaround solutions"
+        "• Answer emails, chats, and phone calls regarding mortgage LOS\n"
+        "• Improve efficiency and engineer workaround solutions\n"
+        "• Implement 2FA on company-wide with weekly meetings"
     },
     {
         "title": "Office Manager",
@@ -77,7 +76,7 @@ class Resume extends StatelessWidget {
         "dates": "01/2014 - 08/2014",
         "location": "Santa Monica, CA",
         "description": "Pretty interesting legal work\n"
-        "• Fixing broken tech and doing legal assistant tasks on the computer\n"
+        "• Fix broken tech and perform electronic legal assistant tasks\n"
         "• This was when I thought I might want to be a lawyer\n"
         "• Learned all the good lunch spots in Santa Monica"
     }
