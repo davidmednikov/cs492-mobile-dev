@@ -4,14 +4,14 @@ class PredictorModel {
 
   final Random random = Random();
   static final List<String> answers = [
-    'My sources say unlikely, but don\'t rule it out until tomorrow.',
-    'If I had to bet a million dolllars, no. If I had to be a dollar, still no.',
-    'There is a possibility that you have a chance at maybe getting called back.',
-    '50 / 50 - They either call you, or they don\'t.',
-    'I\'m...like...sensing positive vibes and energy from you major. You totally got this.',
-    'I can\'t think for myself, some lousy dev created me. Why would you trust my opinion?',
-    'I can say with utmost certainty that the company may call you back.',
-    'As your predictor model, it is my duty to have one outcome that says yes.',
+    'MY SOURCES SAY UNLIKELY, BUT DON\'T RULE IT OUT UNTIL TOMORROW.',
+    'IF I HAD TO BET A MILLION DOLLLARS, NO. IF I HAD TO BE A DOLLAR, STILL NO.',
+    'THERE IS A POSSIBILITY THAT YOU HAVE A CHANCE AT MAYBE GETTING CALLED BACK.',
+    '50 / 50 - THEY EITHER CALL YOU, OR THEY DON\'T.',
+    'I\'M...LIKE...SENSING POSITIVE VIBES AND ENERGY FROM YOU MAJOR. YOU TOTALLY GOT THIS.',
+    'I CAN\'T THINK FOR MYSELF, SOME LOUSY DEV CREATED ME. WHY WOULD YOU TRUST MY OPINION?',
+    'I CAN SAY WITH UTMOST CERTAINTY THAT THE COMPANY MAY CALL YOU BACK.',
+    'AS YOUR PREDICTOR MODEL, IT IS MY DUTY TO HAVE ONE OUTCOME THAT SAYS YES.',
   ];
 
   String _prediction = answers[0];

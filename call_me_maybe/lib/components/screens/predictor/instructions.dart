@@ -11,7 +11,7 @@ class Instructions extends StatelessWidget {
     return Container(
       child: Text(
         instructions,
-        style: TextStyle(fontSize: 22),
+        style: TextStyle(fontSize: 20, fontFamily: 'Eminenz', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
       ),
     );
   }

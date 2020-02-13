@@ -23,8 +23,10 @@ class AppScaffold extends StatelessWidget {
         backgroundColor: Color(0xff54b0f3),
         bottom: TabBar(tabs: tabs),
       ),
-      body: TabBarView(
-        children: screens,
+      body: SafeArea(
+        child: TabBarView(
+          children: screens,
+        ),
       ),
       backgroundColor: Color(0xffeef3f9),
     );

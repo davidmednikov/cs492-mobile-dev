@@ -10,12 +10,12 @@ class Email extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20.0),
+      padding: EdgeInsets.only(left: 10.0),
       child: GestureDetector(
         onTap: openEmail,
         child: Text(
           email,
-          style: TextStyle(fontSize: 16, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
+          style: TextStyle(fontSize: 15, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
         ),
       ),
     );

@@ -12,7 +12,7 @@ class Prompt extends StatelessWidget {
       padding: EdgeInsets.only(top: topPadding(context), bottom: bottomPadding(context) ),
       child: Text(
         prompt,
-        style: TextStyle(fontSize: 32),
+        style: TextStyle(fontSize: 32, fontFamily: 'Afternoon', color: Color(0xff5d5c5e)),
       ),
     );
   }

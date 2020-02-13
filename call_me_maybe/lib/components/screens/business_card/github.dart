@@ -10,12 +10,12 @@ class Github extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 20.0),
+      padding: EdgeInsets.only(right: padding(context)),
       child: GestureDetector(
         onTap: openUrl,
         child: Text(
           github,
-          style: TextStyle(fontSize: 16, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
+          style: TextStyle(fontSize: 15, fontFamily: 'Garamond', fontWeight: FontWeight.bold, color: Color(0xff5d5c5e)),
         ),
       )
     );
@@ -28,6 +28,13 @@ class Github extends StatelessWidget {
     } else {
       throw 'Could not launch $httpUrl';
     }
+  }
+
+  double padding(context) {
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+      return 10.0;
+    }
+    return 20.0;
   }
 
 }

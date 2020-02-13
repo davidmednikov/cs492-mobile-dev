@@ -12,7 +12,7 @@ class Prediction extends StatelessWidget {
       padding: EdgeInsets.only(top: topPadding(context), left: sidePadding(context), right: sidePadding(context)),
       child: Text(
         prediction,
-        style: TextStyle(fontSize: 26),
+        style: TextStyle(fontSize: 26, fontFamily: 'Autobus', color: Color(0xff5d5c5e)),
         textAlign: TextAlign.center,
       ),
     );
@@ -22,7 +22,7 @@ class Prediction extends StatelessWidget {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
       return MediaQuery.of(context).size.height * 0.06;
     }
-    return MediaQuery.of(context).size.height * 0.07;
+    return MediaQuery.of(context).size.height * 0.1;
   }
 
   double sidePadding(BuildContext context) {
