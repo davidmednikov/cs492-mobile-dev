@@ -60,7 +60,7 @@ class JournalState extends State<Journal> {
   }
 
   ThemeData getThemeData() {
-    if (widget.preferences.getBool('darkMode')) {
+    if (widget.preferences.getBool('darkMode') != null && widget.preferences.getBool('darkMode') == true) {
       return ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.teal,

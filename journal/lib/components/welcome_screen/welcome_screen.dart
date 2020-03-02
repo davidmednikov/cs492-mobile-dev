@@ -97,7 +97,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
       endDrawer: DarkModeDrawer(preferences: widget.preferences),
       twoPanesWidthBreakpoint: 500,
-      masterPaneWidth: 350,
+      masterPaneWidth: 250,
     );
   }
 
