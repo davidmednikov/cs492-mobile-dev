@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ImageDetail extends StatelessWidget {
 
@@ -13,8 +14,14 @@ class ImageDetail extends StatelessWidget {
         Expanded(
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Image(
-              image: NetworkImage(imageURL),
+            child: CachedNetworkImage(
+              imageUrl: imageURL,
+              placeholder: (context, url) => Padding(
+                padding: EdgeInsets.all(100),
+                child: Center(
+                  child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.blueGrey)),
+                ),
+              ),
             ),
           ),
         ),

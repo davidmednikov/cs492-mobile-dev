@@ -37,7 +37,7 @@ class _PostListState extends State<PostList> {
         }
       );
     }
-    return Center(child: CircularProgressIndicator());
+    return Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.blueGrey)));
   }
 
   PostModel createPostFromMap(DocumentSnapshot post) {

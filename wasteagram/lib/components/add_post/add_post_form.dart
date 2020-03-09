@@ -22,94 +22,102 @@ class _AddPostFormState extends State<AddPostForm> {
   LocationData locationData;
 
   int quantity;
+  bool buttonPressed = false;
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: retrieveLocation(),
-      builder: (BuildContext context, AsyncSnapshot<LocationData> snapshot) => createForm(context, snapshot),
-    );
-  }
-
-  Widget createForm(BuildContext context, AsyncSnapshot<LocationData> snapshot) {
-    if (snapshot.hasData) {
-      locationData = snapshot.data;
-      return ListView(
-        children: [
-          Form(
-            key: formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                SelectedImage(image: widget.image),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
-                        child: TextFormField(
-                          autofocus: true,
-                          decoration: InputDecoration(
-                            labelText: 'Number of Items',
-                            border: OutlineInputBorder(),
-                          ),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                              WhitelistingTextInputFormatter.digitsOnly
-                          ],
-                          onSaved: (value) {
-                            quantity = int.parse(value);
-                          },
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'Please enter the number of items';
-                            }
-                            return null;
+    return ListView(
+      children: [
+        Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SelectedImage(image: widget.image),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
+                      child: TextFormField(
+                        autofocus: true,
+                        decoration: InputDecoration(
+                          labelText: 'Number of Items',
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                            WhitelistingTextInputFormatter.digitsOnly
+                        ],
+                        onSaved: (value) {
+                          quantity = int.parse(value);
+                        },
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter the number of items';
                           }
-                        )
-                      ),
+                          return null;
+                        }
+                      )
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        child: RaisedButton(
-                          onPressed: () async {
-                            if (formKey.currentState.validate()) {
-                              formKey.currentState.save();
-                              await uploadPost();
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          color: Colors.lightBlue,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 80),
-                            child: Center(
-                              child: Icon(Icons.cloud_upload, size: 50, color: Colors.white),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      child: RaisedButton(
+                        onPressed: () async {
+                          if (formKey.currentState.validate()) {
+                            formKey.currentState.save();
+                            buttonPressed = true;
+                            setState( () {} );
+                            await uploadPost();
+                            Navigator.of(context).pop();
+                          }
+                        },
+                        color: Colors.lightBlue,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 80),
+                          child: Center(
+                            child: FutureBuilder(
+                              future: retrieveLocation(),
+                              builder: (context, snapshot) => showButtonOrLoading(context, snapshot),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
+
+  Widget showButtonOrLoading(BuildContext context, AsyncSnapshot<LocationData> snapshot) {
+    if (snapshot.hasData) {
+      locationData = snapshot.data;
+      if (!buttonPressed) {
+        return Icon(Icons.cloud_upload, size: 50, color: Colors.white);
+      }
     }
-    return Center(child: CircularProgressIndicator());
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 7),
+      child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.blueGrey)),
+    );
   }
 
   void uploadPost() async{
     StorageReference storageReference = FirebaseStorage.instance.ref().child(
-      '${getFilename()} - ${new DateTime.now()}'
+      '${getFilename()} (${new DateTime.now()})'
     );
     StorageUploadTask uploadTask = storageReference.putFile(widget.image);
     await uploadTask.onComplete;
