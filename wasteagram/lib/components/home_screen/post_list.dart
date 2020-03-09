@@ -17,7 +17,7 @@ class _PostListState extends State<PostList> {
         children: [
           Expanded(
             child: StreamBuilder(
-              stream: Firestore.instance.collection('posts').snapshots(),
+              stream: Firestore.instance.collection('posts').orderBy('date', descending: true).snapshots(),
               builder: (context, snapshot) => convertEntriesToListTiles(context, snapshot),
             ),
           ),

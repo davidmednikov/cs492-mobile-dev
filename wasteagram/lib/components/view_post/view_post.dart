@@ -19,12 +19,16 @@ class ViewPost extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(5),
-          child: Column(
+          child: ListView(
             children: [
-              DateDetail(date: post.date),
-              ImageDetail(imageURL: post.imageURL),
-              QuantityDetail(quantity: post.quantity),
-              LocationDetail(latitude: post.latitude, longitude: post.longitude),
+              Column(
+                children: [
+                  DateDetail(date: post.date),
+                  ImageDetail(imageURL: post.imageURL),
+                  QuantityDetail(quantity: post.quantity),
+                  LocationDetail(latitude: post.latitude, longitude: post.longitude),
+                ],
+              ),
             ],
           ),
         ),
