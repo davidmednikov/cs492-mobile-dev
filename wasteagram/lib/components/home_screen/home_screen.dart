@@ -27,26 +27,41 @@ class _HomeScreenState extends State<HomeScreen> {
           child: PostList(),
         ),
       ),
-      floatingActionButton: SpeedDial(
-        marginRight: 175,
-        child: Icon(Icons.add),
-        children: [
-          SpeedDialChild(
-            child: Icon(Icons.camera_alt),
-            backgroundColor: Colors.red,
-            label: 'Camera',
-            labelStyle: TextStyle(fontSize: 18),
-            onTap: () => getImageFromCamera(),
-          ),
-          SpeedDialChild(
-            child: Icon(Icons.photo_album),
-            backgroundColor: Colors.green,
-            label: 'Gallery',
-            labelStyle: TextStyle(fontSize: 18),
-            onTap: () => getImageFromGallery(),
-          ),
-        ]
-      ),
+      floatingActionButton: Semantics(
+        button: true,
+        enabled: true,
+        onTapHint: 'Add Post',
+        child: SpeedDial(
+          marginRight: 175,
+          child: Icon(Icons.add),
+          children: [
+            SpeedDialChild(
+              child: Semantics(
+                button: true,
+                enabled: true,
+                onTapHint: 'Take Picture',
+                child: Icon(Icons.camera_alt),
+              ),
+              backgroundColor: Colors.red,
+              label: 'Camera',
+              labelStyle: TextStyle(fontSize: 18),
+              onTap: () => getImageFromCamera(),
+            ),
+            SpeedDialChild(
+              child: Semantics(
+                button: true,
+                enabled: true,
+                onTapHint: 'Choose From Gallery',
+                child: Icon(Icons.photo_album),
+              ),
+              backgroundColor: Colors.green,
+              label: 'Gallery',
+              labelStyle: TextStyle(fontSize: 18),
+              onTap: () => getImageFromGallery(),
+            ),
+          ],
+        ),
+      )
     );
   }
 

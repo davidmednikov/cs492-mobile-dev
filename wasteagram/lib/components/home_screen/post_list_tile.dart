@@ -12,31 +12,34 @@ class PostListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        dateFormat.format(post.date),
-        style: TextStyle(fontSize: 22),
-      ),
-      trailing: Container(
-        decoration: ShapeDecoration(
-          shape: CircleBorder(
-            side: BorderSide(
-              color: Colors.black,
-              width: 1.0,
+    return Semantics(
+      onTapHint: 'View Post# ${post.id}',
+      child: ListTile(
+        title: Text(
+          dateFormat.format(post.date),
+          style: TextStyle(fontSize: 22),
+        ),
+        trailing: Container(
+          decoration: ShapeDecoration(
+            shape: CircleBorder(
+              side: BorderSide(
+                color: Colors.black,
+                width: 1.0,
+              ),
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Text(
+              post.quantity.toString(),
+              style: TextStyle(fontSize: 22),
             ),
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.all(13),
-          child: Text(
-            post.quantity.toString(),
-            style: TextStyle(fontSize: 22),
-          ),
-        ),
+        onTap: () {
+          Navigator.of(context).pushNamed('view', arguments: post);
+        },
       ),
-      onTap: () {
-        Navigator.of(context).pushNamed('view', arguments: post);
-      },
     );
   }
 }

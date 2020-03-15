@@ -16,7 +16,7 @@ class LocationDetail extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: Center(
               child: Text(
-                '($latitude, $longitude)',
+                '(${roundNumberWithPrecision(latitude, 3)}, ${roundNumberWithPrecision(longitude, 3)})',
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -24,5 +24,9 @@ class LocationDetail extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  double roundNumberWithPrecision(double number, int precision) {
+    return double.parse((number).toStringAsFixed(precision));
   }
 }

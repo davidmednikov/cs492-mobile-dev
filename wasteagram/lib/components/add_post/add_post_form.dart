@@ -26,13 +26,13 @@ class _AddPostFormState extends State<AddPostForm> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Form(
-          key: formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
+    return Form(
+      key: formKey,
+      child: ListView(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // mainAxisSize: MainAxisSize.max,
+        children: [
+          Column(
             children: [
               SelectedImage(image: widget.image),
               Row(
@@ -40,53 +40,62 @@ class _AddPostFormState extends State<AddPostForm> {
                   Expanded(
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
-                      child: TextFormField(
-                        autofocus: true,
-                        decoration: InputDecoration(
-                          labelText: 'Number of Items',
-                          border: OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
-                        ],
-                        onSaved: (value) {
-                          quantity = int.parse(value);
-                        },
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'Please enter the number of items';
+                      child: Semantics(
+                        textField: true,
+                        focusable: true,
+                        child: TextFormField(
+                          autofocus: true,
+                          decoration: InputDecoration(
+                            labelText: 'Number of Items',
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                              WhitelistingTextInputFormatter.digitsOnly
+                          ],
+                          onSaved: (value) {
+                            quantity = int.parse(value);
+                          },
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Please enter the number of items';
+                            }
+                            return null;
                           }
-                          return null;
-                        }
-                      )
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      child: RaisedButton(
-                        onPressed: () async {
-                          if (formKey.currentState.validate()) {
-                            formKey.currentState.save();
-                            buttonPressed = true;
-                            setState( () {} );
-                            await uploadPost();
-                            Navigator.of(context).pop();
-                          }
-                        },
-                        color: Colors.lightBlue,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 80),
-                          child: Center(
-                            child: FutureBuilder(
-                              future: retrieveLocation(),
-                              builder: (context, snapshot) => showButtonOrLoading(context, snapshot),
+                      child: Semantics(
+                        button: true,
+                        enabled: true,
+                        onTapHint: 'Upload Post',
+                        child: RaisedButton(
+                          onPressed: () async {
+                            if (formKey.currentState.validate()) {
+                              formKey.currentState.save();
+                              buttonPressed = true;
+                              setState( () {} );
+                              await uploadPost();
+                              Navigator.of(context).pop();
+                            }
+                          },
+                          color: Colors.lightBlue,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 80),
+                            child: Center(
+                              child: FutureBuilder(
+                                future: retrieveLocation(),
+                                builder: (context, snapshot) => showButtonOrLoading(context, snapshot),
+                              ),
                             ),
                           ),
                         ),
@@ -97,8 +106,8 @@ class _AddPostFormState extends State<AddPostForm> {
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
